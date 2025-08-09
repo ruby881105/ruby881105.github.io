@@ -1,0 +1,88 @@
+# Site settings
+title: 王蘇緞女士紀念獎學金
+footer: 王蘇緞女士紀念獎學金
+email: 0000@gmail.com
+description: 提供獎學金資訊與申請指引
+lang: zh-TW
+
+remote_theme: aksakalli/jekyll-doc-theme
+theme: null
+
+baseurl: "" 
+url: https://ruby881105.github.io
+
+git_address: https://github.com/ruby881105/ruby881105.github.io
+git_edit_address: https://github.com/ruby881105/ruby881105.github.io/blob/main
+
+bootwatch: paper
+
+navbar:
+  - name: 首頁
+    link: /
+  - name: 獎學金介紹
+    link: /docs/scholarship/
+  - name: 申請方式
+    link: /docs/apply/
+  - name: 聯絡我們
+    link: /docs/contact/
+
+markdown: kramdown
+highlighter: rouge
+plugins:
+  - jekyll-feed
+  - jekyll-redirect-from
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - .idea/
+  - .gitignore
+  - README.md
+
+timezone: Asia/Taipei
+
+defaults:
+  - scope:
+      path: _posts
+      type: posts
+    values:
+      layout: post
+      sectionid: news
+
+  - scope:
+      path: _docs
+      type: docs
+    values:
+      layout: docs_no_nav
+      sectionid: docs
+
+  - scope:
+      path: _docs/apply
+      type: docs
+    values:
+      layout: docs_no_nav
+      sectionid: apply
+
+  - scope:
+      path: _docs/scholarship
+      type: docs
+    values:
+      layout: docs_no_nav
+      sectionid: scholarship
+
+  - scope:
+      path: _docs/contact
+      type: docs
+    values:
+      layout: docs_no_nav
+      sectionid: contact
+
+collections:
+  docs:
+    permalink: /:collection/:path/
+    output: true
+  posts:
+    permalink: /news/:year/:month/:day/:title/
+    output: true
